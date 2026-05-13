@@ -13,21 +13,20 @@
         }
 
         body, html {
-            margin: 0;
-            padding: 0;
-            height: 100vh;
-            width: 100vw;
-            overflow: hidden; /* Disables scrolling */
+            margin: 0; padding: 0;
+            height: 100vh; width: 100vw;
+            overflow: hidden;
             background-color: #ffffff;
             font-family: 'Montserrat', sans-serif;
         }
 
-        /* Top Left Brand Logo */
+        /* Top Left Brand Logo - Fixed size and position */
         .top-left-logo {
             position: absolute;
             top: 20px;
             left: 20px;
-            width: 180px;
+            width: 150px; /* Controlled size */
+            height: auto;
             z-index: 100;
         }
 
@@ -37,7 +36,7 @@
             left: 50px;
             top: 50%;
             transform: translateY(-50%);
-            width: 100px;
+            width: 90px;
             height: 450px;
             background-color: var(--soft-pink);
             display: flex;
@@ -49,12 +48,11 @@
         .vertical-sidebar h2 {
             transform: rotate(-90deg);
             font-family: 'Playfair Display', serif;
-            font-size: 3.5rem;
+            font-size: 3rem;
             margin: 0;
             color: var(--dark-text);
         }
 
-        /* Top Navigation */
         nav {
             position: absolute;
             top: 40px;
@@ -70,7 +68,7 @@
             color: var(--dark-text);
             font-family: 'Playfair Display', serif;
             font-weight: bold;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             padding: 8px 15px;
             transition: 0.3s;
         }
@@ -80,7 +78,6 @@
             border-radius: 5px;
         }
 
-        /* FULL HEIGHT Floral Layer */
         .hero-section {
             display: flex;
             height: 100vh;
@@ -89,26 +86,27 @@
         }
 
         .floral-column {
-            width: 25%; /* Takes up 1/4 of the screen width */
-            height: 100vh; /* Top to bottom */
+            width: 25%;
+            height: 100vh;
             background-image: url('floral-bg.png');
             background-size: cover;
             background-position: center;
             position: relative;
-            margin-left: 200px; /* Space for sidebar */
+            margin-left: 180px;
             animation: fadeIn 3s ease-in;
         }
 
+        /* Character Size Adjustment */
         .anime-character {
             position: absolute;
             bottom: 0;
-            left: 20px;
-            width: 110%; /* Stretches character slightly outside the floral box */
+            left: 50%;
+            transform: translateX(-50%); /* Centers her in the column */
+            width: 85%; /* Reduced size so she fits elegantly */
             height: auto;
             animation: fadeIn 4s ease-in;
         }
 
-        /* Main Center Logo */
         .center-logo-container {
             flex-grow: 1;
             display: flex;
@@ -117,7 +115,7 @@
         }
 
         .center-logo-container img {
-            width: 600px; /* Larger logo */
+            width: 500px;
         }
 
         @keyframes fadeIn {
@@ -125,13 +123,13 @@
             to { opacity: 1; }
         }
 
-        .cart-icon { width: 45px; cursor: pointer; }
+        .cart-icon { width: 40px; cursor: pointer; }
     </style>
 </head>
 <body>
 
-    <!-- TOP LEFT LOGO -->
-    <img src="top-left-logo.png" class="top-left-logo" alt="The Pink Baroness Logo">
+    <!-- Using main-logo.png for both since you said they are the same -->
+    <img src="main-logo.png" class="top-left-logo" alt="The Pink Baroness Logo">
 
     <nav>
         <a href="#" style="background-color: var(--soft-pink); border-radius: 5px;">home</a>
