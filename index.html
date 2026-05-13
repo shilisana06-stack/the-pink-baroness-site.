@@ -3,210 +3,136 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Pink Baroness | Royal Artisan Stationery</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Playfair+Display:ital,wght@0,400;1,700&family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
+    <title>The Pink Baroness | Home</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,700&family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
     <style>
         :root {
-            --royal-gold: #d4af37;
-            --deep-rose: #880e4f;
+            --baroness-pink: #ff69b4;
             --soft-pink: #fce4ec;
-            --dark-gothic: #1a1a1a;
-            --cream: #fffdf9;
+            --dark-text: #1a1a1a;
         }
 
-        body {
+        body, html {
             margin: 0;
-            background-color: var(--cream);
-            color: var(--dark-gothic);
-            font-family: 'Montserrat', sans-serif;
-            overflow-x: hidden;
-        }
-
-        h1, h2, .brand-font {
-            font-family: 'Cinzel', serif;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-        }
-
-        /* --- THE ROYAL REVEAL HERO --- */
-        .hero {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            background: radial-gradient(circle, var(--soft-pink) 0%, var(--cream) 100%);
-            border: 15px solid var(--royal-gold);
-            box-sizing: border-box;
-            position: relative;
-        }
-
-        .hero-border {
-            position: absolute;
-            top: 20px; left: 20px; right: 20px; bottom: 20px;
-            border: 1px solid var(--royal-gold);
-            pointer-events: none;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            color: var(--deep-rose);
-            margin-bottom: 0;
-        }
-
-        .hero p {
-            font-family: 'Playfair Display', serif;
-            font-style: italic;
-            font-size: 1.5rem;
-            margin-top: 10px;
-        }
-
-        /* --- COLLECTION SECTION --- */
-        .collection-section {
-            padding: 80px 20px;
-            text-align: center;
-        }
-
-        .drop-counter {
-            background: var(--dark-gothic);
-            color: var(--royal-gold);
-            padding: 10px 20px;
-            display: inline-block;
-            font-weight: bold;
-            margin-bottom: 40px;
-            border: 1px solid var(--royal-gold);
-        }
-
-        .grid-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        /* --- 3D MOTION MOCKUP CONTAINER --- */
-        .notebook-card {
-            background: white;
-            padding: 20px;
-            border: 1px solid var(--soft-pink);
-            transition: transform 0.3s ease;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-        }
-
-        .notebook-card:hover {
-            transform: translateY(-10px);
-            border-color: var(--royal-gold);
-        }
-
-        .motion-mockup {
-            width: 100%;
-            height: 400px;
-            background: #eee; /* Placeholder */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 20px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .motion-mockup video {
-            width: 100%;
+            padding: 0;
             height: 100%;
-            object-fit: cover;
+            overflow: hidden; /* Disables scrolling */
+            background-color: #ffffff;
+            font-family: 'Montserrat', sans-serif;
         }
 
-        /* --- TUNISIAN HYBRID TEXT --- */
-        .price-tag {
-            font-weight: bold;
-            color: var(--deep-rose);
-            font-size: 1.2rem;
+        /* Fixed Vertical Sidebar */
+        .vertical-sidebar {
+            position: fixed;
+            left: 50px;
+            top: 230px;
+            width: 80px;
+            height: 400px;
+            background-color: var(--soft-pink);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
         }
 
-        .cta-button {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 15px 40px;
-            background: var(--royal-gold);
-            color: white;
+        .vertical-sidebar h2 {
+            transform: rotate(-90deg);
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            margin: 0;
+            color: var(--dark-text);
+        }
+
+        /* Top Navigation */
+        nav {
+            position: absolute;
+            top: 40px;
+            right: 150px;
+            display: flex;
+            gap: 50px;
+            align-items: center;
+            z-index: 20;
+        }
+
+        nav a {
             text-decoration: none;
+            color: var(--dark-text);
+            font-family: 'Playfair Display', serif;
             font-weight: bold;
+            font-size: 1.2rem;
+            padding: 5px 15px;
             transition: 0.3s;
         }
 
-        .cta-button:hover {
-            background: var(--deep-rose);
+        nav a:hover, nav a.active {
+            background-color: var(--soft-pink);
+            border-radius: 5px;
         }
 
-        /* --- BEHIND THE BRAND --- */
-        .process-section {
-            background: var(--soft-pink);
-            padding: 60px 20px;
-            margin-top: 50px;
+        /* Layered Content Containers */
+        .hero-container {
+            display: flex;
+            height: 100vh;
+            align-items: center;
+            padding-left: 200px;
+            gap: 50px;
         }
 
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2rem; }
+        .floral-layer {
+            width: 300px;
+            height: 600px;
+            background-image: url('floral-bg.png'); /* Use your image here */
+            background-size: cover;
+            position: relative;
+            animation: fadeIn 3s ease-in;
         }
+
+        .anime-character {
+            position: absolute;
+            bottom: -20px;
+            left: 50px;
+            width: 350px;
+            animation: fadeIn 4s ease-in;
+        }
+
+        .logo-reveal {
+            max-width: 500px;
+            animation: fadeIn 2.5s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .cart-icon { width: 40px; cursor: pointer; }
     </style>
 </head>
 <body>
 
-    <div class="hero">
-        <div class="hero-border"></div>
-        <div class="brand-font" style="color: var(--royal-gold);">Bienvenue à</div>
-        <h1>The Pink Baroness</h1>
-        <p>Premium A6 Pocket Journals</p>
-        <div style="margin-top: 30px; font-family: 'Playfair Display';">
-            Handmade in Tunisia | Classic Kawaii Luxury
-        </div>
+    <nav>
+        <a href="#" class="active">home</a>
+        <a href="#">about us</a>
+        <a href="#">categories</a>
+        <img src="cart-icon.png" class="cart-icon" alt="purchases">
+    </nav>
+
+    <div class="vertical-sidebar">
+        <h2>home</h2>
     </div>
 
-    <section class="collection-section">
-        <div class="drop-counter">EXCLUSIVE DROP: 14/20 UNITS LEFT</div>
-        <h2>La Nouvelle Collection</h2>
-        
-        <div class="grid-container">
-            <!-- Notebook 1: Shinobu Theme -->
-            <div class="notebook-card">
-                <div class="motion-mockup">
-                    <!-- Replace 'video.mp4' with your actual 3D mockup file -->
-                    <video autoplay muted loop playsinline>
-                        <source src="your-video-link.mp4" type="video/mp4">
-                        Your 3D Motion Mockup Here
-                    </video>
-                </div>
-                <h3>Butterfly Breath (Shinobu)</h3>
-                <p>High-end Anime Motif x Royal Silk Ribbons</p>
-                <div class="price-tag">Price: XX TND</div>
-                <p><i>Livraison à domicile (COD) available across Tunisia</i></p>
-                <a href="#" class="cta-button">COMMANDER SUR INSTAGRAM</a>
-            </div>
-
-            <!-- Notebook 2: Dark Royal -->
-            <div class="notebook-card">
-                <div class="motion-mockup">
-                    <div style="padding: 20px;">[Insert Dark Royal 3D Mockup]</div>
-                </div>
-                <h3>Dark Gothic Royal</h3>
-                <p>19th Century Rococo Design in Deep Noir</p>
-                <div class="price-tag">Price: XX TND</div>
-                <a href="#" class="cta-button">COMMANDER SUR INSTAGRAM</a>
-            </div>
+    <div class="hero-container">
+        <!-- Floral and Character Stack -->
+        <div class="floral-layer">
+            <!-- Ensure your character image is a PNG with a transparent background -->
+            <img src="character-main.png" alt="The Pink Baroness">
         </div>
-    </section>
 
-    <section class="process-section">
-        <div style="max-width: 800px; margin: 0 auto; text-align: center;">
-            <h2>Behind the Craft</h2>
-            <p>From 2D Concept to 3D Reality. Kol chay handmade b'love w precision.</p>
-            <div style="background: white; padding: 40px; margin-top: 20px; border: 1px dashed var(--royal-gold);">
-                [Space for your "Build in Public" Video Reel]
-            </div>
+        <!-- Main Logo Section -->
+        <div class="logo-reveal">
+            <img src="main-logo.png" alt="The Pink Baroness Journal">
         </div>
-    </section>
+    </div>
 
 </body>
 </html>
