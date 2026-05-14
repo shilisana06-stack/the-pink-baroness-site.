@@ -4,49 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Pink Baroness | Home</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,700&family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
     <style>
         @font-face {
-    font-family: 'MyLocalBerkshire';
-    src: url('BerkshireSwash-Regular.ttf'); /* Use your exact file name here */
-}
+            font-family: 'MyLocalBerkshire';
+            src: url('BerkshireSwash-Regular.ttf');
+        }
 
-/* Now apply it to your elements */
-.vertical-sidebar h2 {
-    font-family: 'MyLocalBerkshire', cursive;
-    font-size: 4rem;
-    margin: 0;
-    transform: rotate(-90deg);
-    color: black;
-}
-
-nav a {
-    font-family: 'MyLocalBerkshire', cursive;
-    text-decoration: none;
-    color: black;
-    font-weight: normal;
-    display: inline-block;
-    width: 200px;
-    text-align: center;
-}
-        @media screen and (width: 1920px) and (height: 1080px) {
-    /* All your architectural coordinates go here */
-    .center-logo-container {
-        left: 1110px;
-        top: 900px;
-    }
-    
-    nav {
-        left: 1000px;
-        top: 100px;
-    }
-}
         body, html {
             margin: 0; padding: 0;
-            height: 100vh; width: 100vw;
-            overflow: hidden;
+            min-height: 100vh;
+            width: 100%;
+            overflow-x: hidden; 
+            overflow-y: auto;
             background-color: #f8e9e9;
-            font-family: 'berkshire swash', sans-serif;
+            /* Applying Berkshire Swash globally */
+            font-family: 'MyLocalBerkshire', cursive;
         }
 
         /* Top Left Logo */
@@ -58,58 +30,75 @@ nav a {
             z-index: 100;
         }
 
-       .vertical-sidebar {
-    position: fixed;
-    left: 100px;  /* Exactly 100px from left */
-    top: 402px;   /* Exactly 402px from top */
-    width: 200px;
-    height: 678px;
-    background-color: #ffd6d6;
-    display: flex;
-    flex-direction: column; /* Allows logo and text to stack */
-    align-items: center;
-    justify-content: flex-start; /* Starts content from the top of the bar */
-    padding-top: 20px;
-    z-index: 10;
+        /* Vertical Sidebar */
+        .vertical-sidebar {
+            position: fixed;
+            left: 100px;
+            top: 402px;
+            width: 200px;
+            height: 678px;
+            background-color: #ffd6d6;
+            display: flex;
+            align-items: center;    /* Centering horizontally */
+            justify-content: center; /* Centering vertically */
+            z-index: 10;
         }
 
         .vertical-sidebar h2 {
+            /* Rotated 90 degrees and sized to 80px */
             transform: rotate(-90deg);
-            font-family: 'berkshire swash', sans-serif;
-            font-size: 3rem;
+            font-family: 'MyLocalBerkshire', cursive;
+            font-size: 80px; 
             margin: 0;
+            white-space: nowrap;
+            color: black;
+            font-weight: normal;
         }
-nav {
-    position: absolute;
-    top: 100px; /* Starts 100px from the top */
-    left: 1000px; /* Starts 1000px from the left */
-    display: flex;
-    align-items: center;
-    /* We remove 'gap' because we are using fixed widths instead */
-}
 
-nav a, .cart-wrapper {
-    width: 200px; /* Each item gets exactly 200px of space */
-    text-align: center; /* This centers the text inside that 200px space */
-    text-decoration: none;
-    color: black;
-    font-family: berkshire swash', sans-serif;
-    font-weight: bold;
-    display: inline-block;
-}
-
-/* Specific styling for the active 'home' tab */
-.active-tab {
-    background-color: #ffd6d6;
-    border-radius: 5px;
-    padding: 10px 0; /* Padding inside its 200px space */
+        /* Responsive Navigation */
+        nav {
+            position: absolute;
+            top: 100px;
+            right: 5%;
+            display: flex;
+            align-items: center;
+            z-index: 20;
         }
-.cart {
-    width: 40px;
-    display: block;
-    margin: 0 auto; /* Centers the icon inside the 1600-1800px zone */
-}
-        /* Hero Layout */
+
+        nav a {
+            width: 250px; /* Increased width to accommodate larger text */
+            text-align: center;
+            text-decoration: none;
+            color: black;
+            font-family: 'MyLocalBerkshire', cursive;
+            /* Top text size set to 30px */
+            font-size: 30px;
+            font-weight: normal;
+        }
+
+        .active-tab {
+            background-color: #ffd6d6;
+            border-radius: 5px;
+            padding: 5px 15px;
+        }
+
+        /* Responsive Center Logo */
+        .center-logo-container {
+            position: absolute;
+            left: 60%; 
+            top: 45%;
+            transform: translate(-50%, -50%); 
+            width: 30%; 
+            max-width: 550px; 
+            z-index: 15;
+            animation: fadeIn 2.5s ease-in;
+        }
+
+        .center-logo-container img {
+            width: 100%;
+            height: auto;
+        }
+
         .hero-section {
             display: flex;
             height: 100vh;
@@ -118,46 +107,35 @@ nav a, .cart-wrapper {
         }
 
         .floral-column {
-            top: 0px; /* Starts 100px from the top */
-    left: 401px
             width: 400px;
             height: 100vh;
-            background-image: url('floral-bg.png'); /* ENSURE THIS IS UPLOADED */
+            background-image: url('floral-bg.png');
             background-size: cover;
             background-position: center;
             position: relative;
-            margin-left: 100px;
+            margin-left: 100px; 
         }
 
         .anime-character {
             position: absolute;
             bottom: 0;
-            left: 500px;
+            left: 50%;
             transform: translateX(-50%);
-            width: 400px;
-            height: 680px;
+            width: 100%;
+            height: auto;
+            max-height: 80vh;
         }
 
-        .center-logo-container {
-    position: absolute;
-    left: 1110px; /* Your exact horizontal coordinate */
-    top: 194px;  /* Your exact vertical coordinate */
-    width: 550px; /* Your exact width requirement */
-    z-index: 15;  /* Sits in front of the background but behind the navigation */
-    animation: fadeIn 2.5s ease-in;
-}
-
-.center-logo-container img {
-    width: 100%; /* Fills the 550px container perfectly */
-    height: auto;
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
 
-        .cart { width: 40px; }
+        .cart { width: 50px; margin-left: 20px; }
     </style>
 </head>
 <body>
 
-    <!-- This will show at the top left -->
     <img src="main-logo.png" class="top-left-logo" alt="Logo">
 
     <nav>
@@ -176,7 +154,8 @@ nav a, .cart-wrapper {
             <img src="character-main.png" class="anime-character" alt="Character">
         </div>
 
-       <div class="center-logo-container"><img src="center-logo.png" alt="Main Brand Logo">
+        <div class="center-logo-container">
+            <img src="center-logo.png" alt="Main Brand Logo">
         </div>
     </div>
 
