@@ -35,19 +35,19 @@
             z-index: 100;
         }
 
-        /* Vertical Sidebar */
-        .vertical-sidebar {
-            position: fixed;
-            left: 100px;
-            top: 402px;
-            transform: translateY(-50%);
-            width: 200px;
-            height: 678px;
-            background-color: #ffd6d6;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 10;
+       .vertical-sidebar {
+    position: fixed;
+    left: 100px;  /* Exactly 100px from left */
+    top: 402px;   /* Exactly 402px from top */
+    width: 200px;
+    height: 678px;
+    background-color: #ffd6d6;
+    display: flex;
+    flex-direction: column; /* Allows logo and text to stack */
+    align-items: center;
+    justify-content: flex-start; /* Starts content from the top of the bar */
+    padding-top: 20px;
+    z-index: 10;
         }
 
         .vertical-sidebar h2 {
