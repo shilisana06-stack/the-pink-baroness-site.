@@ -99,37 +99,39 @@
             height: auto;
         }
 
-        .hero-section {
-            display: flex;
-            height: 100vh;
-            width: 100vw;
-            align-items: center;
-        }
+        ..hero-section {
+    position: relative; /* Changed from flex to relative */
+    height: 100vh;
+    width: 100vw;
+}
 
-        .floral-column {
-            width: 400px;
-            height: 100vh;
-            background-image: url('floral-bg.png');
-            background-size: cover;
-            background-position: center;
-            position: relative;
-            margin-left: 100px; 
-        }
+.floral-column {
+    position: absolute;
+    top: 0;
+    /* Workspace Math: Sidebar(100px) + Sidebar Width(200px) + Gap(100px) = 400px */
+    left: 400px; 
+    width: 400px;
+    height: 100vh;
+    background-image: url('floral-bg.png');
+    background-size: cover;
+    background-position: center;
+    z-index: 5;
+}
 
-        .anime-character {
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100%;
-            height: auto;
-            max-height: 80vh;
-        }
+.anime-character {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: auto;
+    max-height: 80vh;
+}
 
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
 
         .cart { width: 50px; margin-left: 20px; }
     </style>
