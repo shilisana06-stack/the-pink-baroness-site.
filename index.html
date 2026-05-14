@@ -6,6 +6,29 @@
     <title>The Pink Baroness | Home</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,700&family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
     <style>
+        @font-face {
+    font-family: 'MyLocalBerkshire';
+    src: url('BerkshireSwash-Regular.ttf'); /* Use your exact file name here */
+}
+
+/* Now apply it to your elements */
+.vertical-sidebar h2 {
+    font-family: 'MyLocalBerkshire', cursive;
+    font-size: 4rem;
+    margin: 0;
+    transform: rotate(-90deg);
+    color: black;
+}
+
+nav a {
+    font-family: 'MyLocalBerkshire', cursive;
+    text-decoration: none;
+    color: black;
+    font-weight: normal;
+    display: inline-block;
+    width: 200px;
+    text-align: center;
+}
         @media screen and (width: 1920px) and (height: 1080px) {
     /* All your architectural coordinates go here */
     .center-logo-container {
@@ -111,14 +134,14 @@ nav a, .cart-wrapper {
             bottom: 0;
             left: 500px;
             transform: translateX(-50%);
-            width: 394px;
-            height: 402px;
+            width: 400px;
+            height: 680px;
         }
 
         .center-logo-container {
     position: absolute;
     left: 1110px; /* Your exact horizontal coordinate */
-    top: 900px;  /* Your exact vertical coordinate */
+    top: 194px;  /* Your exact vertical coordinate */
     width: 550px; /* Your exact width requirement */
     z-index: 15;  /* Sits in front of the background but behind the navigation */
     animation: fadeIn 2.5s ease-in;
