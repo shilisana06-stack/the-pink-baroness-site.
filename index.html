@@ -10,28 +10,28 @@
             margin: 0; padding: 0;
             height: 100vh; width: 100vw;
             overflow: hidden;
-            background-color: #ffffff;
+            background-color: #f8e9e9;
             font-family: 'berkshire swash', sans-serif;
         }
 
         /* Top Left Logo */
         .top-left-logo {
             position: absolute;
-            top: 20px;
-            left: 20px;
-            width: 150px;
+            top: 100px;
+            left: 100px;
+            width: 200px;
             z-index: 100;
         }
 
         /* Vertical Sidebar */
         .vertical-sidebar {
             position: fixed;
-            left: 30px;
-            top: 50%;
+            left: 100px;
+            top: 402px;
             transform: translateY(-50%);
-            width: 80px;
-            height: 400px;
-            background-color: #fce4ec;
+            width: 200px;
+            height: 678px;
+            background-color: #ffd6d6;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -40,35 +40,40 @@
 
         .vertical-sidebar h2 {
             transform: rotate(-90deg);
-            font-family: 'Playfair Display', serif;
+            font-family: 'berkshire swash', sans-serif;
             font-size: 3rem;
             margin: 0;
         }
+nav {
+    position: absolute;
+    top: 100px; /* Starts 100px from the top */
+    left: 1000px; /* Starts 1000px from the left */
+    display: flex;
+    align-items: center;
+    /* We remove 'gap' because we are using fixed widths instead */
+}
 
-        /* Navigation */
-        nav {
-            position: absolute;
-            top: 40px;
-            right: 50px;
-            display: flex;
-            gap: 30px;
-            align-items: center;
-            z-index: 20;
+nav a, .cart-wrapper {
+    width: 200px; /* Each item gets exactly 200px of space */
+    text-align: center; /* This centers the text inside that 200px space */
+    text-decoration: none;
+    color: black;
+    font-family: 'Playfair Display', serif;
+    font-weight: bold;
+    display: inline-block;
+}
+
+/* Specific styling for the active 'home' tab */
+.active-tab {
+    background-color: #fce4ec;
+    border-radius: 5px;
+    padding: 10px 0; /* Padding inside its 200px space */
         }
-
-        nav a {
-            text-decoration: none;
-            color: black;
-            font-family: 'berkshire swash', serif;
-            font-weight: bold;
-            padding: 8px 15px;
-        }
-
-        .active-tab {
-            background-color: #fce4ec;
-            border-radius: 5px;
-        }
-
+.cart {
+    width: 40px;
+    display: block;
+    margin: 0 auto; /* Centers the icon inside the 1600-1800px zone */
+}
         /* Hero Layout */
         .hero-section {
             display: flex;
@@ -78,32 +83,38 @@
         }
 
         .floral-column {
-            width: 30%;
+            top: 0px; /* Starts 100px from the top */
+    left: 401px
+            width: 400px;
             height: 100vh;
             background-image: url('floral-bg.png'); /* ENSURE THIS IS UPLOADED */
             background-size: cover;
             background-position: center;
             position: relative;
-            margin-left: 150px;
+            margin-left: 100px;
         }
 
         .anime-character {
             position: absolute;
             bottom: 0;
-            left: 50%;
+            left: 500px;
             transform: translateX(-50%);
-            width: 90%;
-            height: auto;
+            width: 394px;
+            height: 402px;
         }
 
-        .center-logo {
-            flex-grow: 1;
-            display: flex;
-            justify-content: center;
-        }
+        .center-logo-container {
+    position: absolute;
+    left: 1110px; /* Your exact horizontal coordinate */
+    top: 900px;  /* Your exact vertical coordinate */
+    width: 550px; /* Your exact width requirement */
+    z-index: 15;  /* Sits in front of the background but behind the navigation */
+    animation: fadeIn 2.5s ease-in;
+}
 
-        .center-logo img {
-            width: 500px;
+.center-logo-container img {
+    width: 100%; /* Fills the 550px container perfectly */
+    height: auto;
         }
 
         .cart { width: 40px; }
@@ -130,8 +141,7 @@
             <img src="character-main.png" class="anime-character" alt="Character">
         </div>
 
-        <div class="center-logo">
-            <img src="main-logo.png" alt="Main Logo">
+       <div class="center-logo-container"><img src="center-logo.png" alt="Main Brand Logo">
         </div>
     </div>
 
